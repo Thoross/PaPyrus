@@ -1,0 +1,11 @@
+[save_location]
+# The location that you want to save the downloaded backgrounds to.
+save_location = "C:\Users\%USERNAME%\Pictures\"
+
+[page_count]
+# The amount of pages that you want to return.
+page_count = 2
+
+[tags]
+# A comma delimited list of wallpaper tags that you want to download.
+tags = abstract,space
