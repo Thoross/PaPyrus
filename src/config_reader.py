@@ -1,5 +1,5 @@
 '''
-
+    Copyright (c) 2013 Brendan Betts
     Created by: Brendan Betts (brendan.betts@live.com)
     Created on July 17th, 2013
 '''
@@ -17,7 +17,7 @@ class config_reader ():
 
         try:
             self.config_parser.read(self.file_path)
-            config_sections= self.config_parser.sections()
+            config_sections = self.config_parser.sections()
             config_options = self.get_section_data(config_sections)
             return config_options
 
@@ -28,12 +28,6 @@ class config_reader ():
 
         section_data = {}
         for section in config_sections:
-            if section == "save_location":
-                section_data[section] = self.config_parser.get(section, "save_location")
+            section_data[section] = self.config_parser.get(section, section)
 
-            elif section == "tags":
-                section_data[section] = self.config_parser.get(section, "tags")
-
-            else:
-                section_data[section] = self.config_parser.get(section, "page_count")
         return section_data

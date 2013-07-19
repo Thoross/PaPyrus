@@ -16,3 +16,12 @@ Requirements
 	* `Requests for Humans <http://docs.python-requests.org/en/latest/>`_
 
 ----
+
+~~~~~~~
+License
+~~~~~~~
+
+This software is licensed under `The MIT License (MIT) <http://choosealicense.com/licenses/mit/>`_.
+
+Copyright (c) 2013 Brendan Betts
+

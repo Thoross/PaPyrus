@@ -9,3 +9,7 @@ page_count = 2
 [tags]
 # A comma delimited list of wallpaper tags that you want to download.
 tags = abstract,space
+
+[purity]
+# A key value pair for the purity filter on Wallbase (sfw,sketchy, nsfw).
+purity= {"sfw":True,"sketchy":False,"nsfw":False}
