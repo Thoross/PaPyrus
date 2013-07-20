@@ -12,7 +12,7 @@ class url_request():
     def __init__(self, url):
         self.url = url
 
-    def do_request(self):
-        r = requests.get(self.url)
+    def do_request(self, headers):
+        r = requests.get(self.url,headers=headers)
         return r.text
 
