@@ -22,7 +22,7 @@ class config_reader ():
             return config_options
 
         except ConfigParser.Error, e:
-            print "There was an error!\n%s" % str(e)
+            print "There was an error with your config!\n%s" % str(e)
 
     def get_section_data(self, config_sections):
 
