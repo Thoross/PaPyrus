@@ -1,7 +1,7 @@
 PaPyrus
 =======
 
-A Wallbase.cc scraper that is configureable.
+A Wallbase.cc scraper that is configurable. It will scrape images for multiple or single tags or a random search.
 
 	* Created by: Brendan Betts (2013)
 	* Dev Home: `https://github.com/Thoross/PaPyrus <https://github.com/Thoross/PaPyrus>`_
