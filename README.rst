@@ -12,7 +12,7 @@ A Wallbase.cc scraper that is configurable. It will scrape images for multiple o
 Requirements
 ~~~~~~~~~~~~
 
-	* Python 2.7
+	* `Python 2.7 <http://www.python.org>`_
 	* `Requests for Humans <http://docs.python-requests.org/en/latest/>`_
 
 ----
