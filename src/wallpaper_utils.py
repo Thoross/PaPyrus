@@ -13,13 +13,23 @@ from image_utils import get_file_path
 def loop_tags(config_options):
     tags = config_options["tags"].split(",")
     for tag in tags:
-        request = url_request("http://wallbase.cc/search/%s" % str(tag))
+        if tag == "":
+                tag = "New Wallpapers"
+                search_url = "http://wallbase.cc/search/"
+        elif tag == "toplist" or tag == "top":
+            search_url = "http://wallbase.cc/toplist"
+            tag = "top"
+        elif tag == "random":
+            search_url = "http://wallbase.cc/random"
+            tag = "random"
+        else:
+            search_url = "http://wallbase.cc/search/%s" % str(tag)
+
+        request = url_request(search_url)
         response_html = request.do_request(None)
         links = get_all_wallpaper_links(response_html)
         for link in links:
             decoded_link = get_wallpaper_download_link(link)
-            if tag == "":
-                tag = "Random"
             get_file_path(config_options["save_location"] +"\\"+tag.capitalize(), decoded_link)
 
 

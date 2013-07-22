@@ -7,10 +7,7 @@
 import config_reader
 from wallpaper_utils import loop_tags
 
-
 if __name__ == "__main__":
     reader = config_reader.config_reader("conf\config")
     config_options = reader.parse_config_file()
     loop_tags(config_options)
-
-

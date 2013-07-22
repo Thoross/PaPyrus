@@ -7,7 +7,6 @@ from os import path
 from os import mkdir
 import urllib2
 
-
 def download_image(decoded_link, file_path, full_file_path):
     if not path.exists(file_path):
         mkdir(file_path)
