@@ -4,12 +4,12 @@
     Created on 7/21/13
 '''
 from os import path
-from os import mkdir
+from os import makedirs
 import urllib2
 
 def download_image(decoded_link, file_path, full_file_path):
     if not path.exists(file_path):
-        mkdir(file_path)
+        makedirs(file_path)
     with open(full_file_path, 'wb') as wallpaper:
         image = urllib2.urlopen(decoded_link)
         wallpaper.write(image.read())

@@ -1,6 +1,6 @@
 [save_location]
 # The location that you want to save the downloaded backgrounds to.
-save_location = "C:\Users\%USERNAME%\Pictures\"
+save_location = C:/Users/Acedia/Pictures/DownloadTest
 
 [page_count]
 # The amount of pages that you want to return.
@@ -8,7 +8,7 @@ page_count = 2
 
 [tags]
 # A comma delimited list of wallpaper tags that you want to download.
-tags = abstract,space
+tags = toplist,abstract,random
 
 [purity]
 # A key value pair for the purity filter on Wallbase (sfw,sketchy, nsfw).
