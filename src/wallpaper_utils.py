@@ -4,6 +4,7 @@
     Created on 7/21/13
 '''
 
+from os import path
 import re
 from url import url_request
 import base64
@@ -30,7 +31,7 @@ def loop_tags(config_options):
         links = get_all_wallpaper_links(response_html)
         for link in links:
             decoded_link = get_wallpaper_download_link(link)
-            get_file_path(config_options["save_location"] +"\\"+tag.capitalize(), decoded_link)
+            get_file_path(path.join(config_options["save_location"], tag.capitalize()), decoded_link)
 
 
 def get_all_wallpaper_links(response_html):

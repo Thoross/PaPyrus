@@ -18,7 +18,7 @@ def download_image(decoded_link, file_path, full_file_path):
 def get_file_path(save_location, decoded_link):
     file_path = path.abspath(save_location)
     file_name = decoded_link.split("/")[5]
-    full_file_path = file_path+"\\"+file_name
+    full_file_path = path.join(file_path, file_name)
     if not path.exists(full_file_path):
         print "Saving %s to %s" % (file_name, file_path)
         download_image(decoded_link, file_path, full_file_path)
