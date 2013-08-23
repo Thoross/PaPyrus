@@ -1,6 +1,6 @@
 [save_location]
 # The location that you want to save the downloaded backgrounds to.
-save_location = C:/Users/Acedia/Pictures/DownloadTest
+save_location = C:/Users/yourName/Pictures/Backgrounds
 
 [page_count]
 # The amount of pages that you want to return.
@@ -8,8 +8,21 @@ page_count = 2
 
 [tags]
 # A comma delimited list of wallpaper tags that you want to download.
-tags = toplist,abstract,random
+tags = abstract,toplist,
 
 [purity]
 # A key value pair for the purity filter on Wallbase (sfw,sketchy, nsfw).
-purity= {"sfw":True,"sketchy":False,"nsfw":False}
+purity= {"sfw":True,"sketchy":True,"nsfw":False}
+
+[thpp]
+# The number of thumbnails to be returned per request, 32 by default.
+thpp = 32
+
+[orderby]
+# The way that you want to order the returned wallpapers.
+# Possible values are date, relevancy, views, favorites, random.
+orderby = date
+
+[orderby_opt]
+# The direction that you want to order the wallpapers that are returned.
+orderby_opt = desc

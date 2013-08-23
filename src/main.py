@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # coding=UTF-8
 '''
     Copyright (c) 2013 Brendan Betts
