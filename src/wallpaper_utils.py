@@ -20,8 +20,9 @@ def loop_tags(config_options):
             response_html = get_html(tag, config_options, i)
             links = get_all_wallpaper_links(response_html)
             for link in links:
-                decoded_link = get_wallpaper_download_link(link)
-                get_file_path(path.join(config_options["save_location"], tag.capitalize()), decoded_link)
+                download_link = get_wallpaper_download_link(link)
+                filename = get_filename(download_link)
+                get_file_path(path.join(config_options["save_location"], tag.capitalize()), download_link, filename)
 
 
 def get_all_wallpaper_links(response_html):
@@ -36,11 +37,9 @@ def get_wallpaper_download_link(wallpaper_link):
                'Content-Type': 'application/x-www-form-urlencoded', 'Accept': '*/*'}
     download_link_request = url_request(url_str)
     response_html = download_link_request.do_get(headers)
-    pattern = re.compile('<img src="\'\+B\(\'(.*)\'\)\+\'" />\'\);</script>')
+    pattern = re.compile('<img src=\"(.*?)\" class=\"wall ')
     image_link = str(pattern.findall(response_html))
-    stripped_link = image_link.split("u'")[1].strip('\']')
-    decoded_link = base64.b64decode(stripped_link)
-    return decoded_link
+    return strip_link(image_link)
 
 
 def get_url_paramas(tag, config_options):
@@ -90,7 +89,7 @@ def get_html(tag, config_options, i):
         search_url = "http://wallbase.cc/random%s" % (str(i*int(config_options["thpp"])))
 
     else:
-        search_url = "http://wallbase.cc/search/%s/%s" % (str(tag), str(i*int(config_options["thpp"])))
+        search_url = "http://wallbase.cc/search?q=%s" % (str(tag))
         url_params = get_url_paramas(tag, config_options)
 
     request = url_request(search_url)
@@ -105,3 +104,9 @@ def do_request(request, is_post, url_params):
 
     return response_html
 
+def strip_link(image_link):
+    return image_link.split("u'")[1].strip('\']/')
+
+def get_filename(image_link):
+    length = len(image_link.split('/'))
+    return image_link.split('/')[length-1]

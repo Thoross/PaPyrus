@@ -15,12 +15,11 @@ def download_image(decoded_link, file_path, full_file_path):
         wallpaper.write(image.read())
 
 
-def get_file_path(save_location, decoded_link):
+def get_file_path(save_location, download_link, file_name):
     file_path = path.abspath(save_location)
-    file_name = decoded_link.split("/")[5]
     full_file_path = path.join(file_path, file_name)
     if not path.exists(full_file_path):
         print "Saving %s to %s" % (file_name, file_path)
-        download_image(decoded_link, file_path, full_file_path)
+        download_image(download_link, file_path, full_file_path)
     else:
         print "%s has already been downloaded to %s." % (file_name, full_file_path)
