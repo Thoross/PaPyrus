@@ -80,7 +80,7 @@ def get_html(tag, config_options, i):
     url_params = None
 
     if tag == "":
-        search_url = "http://wallbase.cc/search/%s" % (str(i*int(config_options["thpp"])))
+        search_url = "http://wallbase.cc/search/"
 
     elif tag == "toplist" or tag == "top":
         search_url = "http://wallbase.cc/toplist/%s" % (str(i*int(config_options["thpp"])))
